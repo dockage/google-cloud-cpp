@@ -1,0 +1,29 @@
+---
+kind: pipeline
+name: default
+
+steps:
+  - name: docker
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/google-cloud-cpp
+      tags:
+        - 'latest'
+
+---
+kind: pipeline
+name: notify
+
+steps:
+  - name: microbadger
+    image: plugins/webhook
+    settings:
+      urls:
+        - https://hooks.microbadger.com/images/dockage/google-cloud-cpp/zyLLguzFpj9SWAZgKuR89hYgxzA=
+
+depends_on:
+  - default
