@@ -3,6 +3,8 @@ Google Cloud Cpp Docker Image
 
 ## UNDER THE DEVELOPMENT ##
 
+# Build
+
 # Quick Start
 
 It depends on your build process tools, for CMake please have a look into:
