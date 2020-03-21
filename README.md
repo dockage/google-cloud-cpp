@@ -1,4 +1,4 @@
-# google-cloud-cpp
+# google-cloud-cpp [![Docker Pulls](https://img.shields.io/docker/pulls/dockage/google-cloud-cpp.svg?style=flat)](https://hub.docker.com/r/dockage/google-cloud-cpp/) [![Docker Stars](https://img.shields.io/docker/stars/dockage/google-cloud-cpp.svg?style=flat)](https://hub.docker.com/r/dockage/google-cloud-cpp/) [![MicroBadger Size (latest)](https://img.shields.io/microbadger/image-size/dockage/google-cloud-cpp/latest.svg)](https://microbadger.com/images/dockage/google-cloud-cpp:latest) [![MicroBadger Layers (latest)](https://img.shields.io/microbadger/layers/dockage/google-cloud-cpp/latest.svg)](https://microbadger.com/images/dockage/google-cloud-cpp:latest) [![Build Status](https://cloud.drone.io/api/badges/dockage/google-cloud-cpp/status.svg)](https://cloud.drone.io/dockage/google-cloud-cpp)
 Google Cloud Cpp Docker Image
 
 ## UNDER THE DEVELOPMENT ##
