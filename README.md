@@ -68,7 +68,6 @@ Before reporting your issue please try updating Docker to the latest version and
 
 If the above recommendations do not help then [report your issue](../../issues/new) along with the following information:
 
-- Output of the `docker vers6` and `docker info` commands
+- Output of the `docker vers6` and `docker info` commands.
 - The `docker run` command or `docker-compose.yml` used to start the image. Mask out the sensitive bits.
 - Please state if you are using [Boot2Docker](http://www.boot2docker.io), [VirtualBox](https://www.virtualbox.org), etc.
-
