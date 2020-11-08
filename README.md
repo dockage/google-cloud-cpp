@@ -17,7 +17,7 @@ Pull the image from the docker index. This is the recommended method of installa
 $ docker pull dockage/google-cloud-cpp:latest
 ```
 
-Alternately you can build the image locally.
+Alternatively, you can build the image locally.
 
 ```bash
 $ git clone https://github.com/dockage/google-cloud-cpp.git
@@ -25,9 +25,9 @@ $ cd google-cloud-cpp
 $ docker build --tag="$USER/google-cloud-cpp" -f v1.20/ubuntu/20.04/Dockerfile .
 ```
 
-## Quick start
+## Quickstart
 
-This part got a copy of [official documentation of google-cloud-cpp installation page](https://github.com/googleapis/google-cloud-cpp-common/blob/master/INSTALL.md).
+This part got a copy of [official documentation of the google-cloud-cpp installation page](https://github.com/googleapis/google-cloud-cpp-common/blob/master/INSTALL.md).
 
 It depends on your building process tools, these flags are required in your C++ projects:
 
