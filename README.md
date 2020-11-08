@@ -1,8 +1,11 @@
 # google-cloud-cpp [![Docker Pulls](https://img.shields.io/docker/pulls/dockage/google-cloud-cpp.svg?style=flat)](https://hub.docker.com/r/dockage/google-cloud-cpp/) [![Docker Stars](https://img.shields.io/docker/stars/dockage/google-cloud-cpp.svg?style=flat)](https://hub.docker.com/r/dockage/google-cloud-cpp/) [![MicroBadger Size (latest)](https://img.shields.io/microbadger/image-size/dockage/google-cloud-cpp/latest.svg)](https://microbadger.com/images/dockage/google-cloud-cpp:latest) [![MicroBadger Layers (latest)](https://img.shields.io/microbadger/layers/dockage/google-cloud-cpp/latest.svg)](https://microbadger.com/images/dockage/google-cloud-cpp:latest) [![Build Status](https://cloud.drone.io/api/badges/dockage/google-cloud-cpp/status.svg)](https://cloud.drone.io/dockage/google-cloud-cpp)
 Google cloud cpp docker image. List of supported cpp libraries:
 
-* Storage
+* BigQuery
 * BigTable
+* Spanner
+* Pub/Sub
+* Storage
 
 To know about the [google-could-cpp](https://github.com/googleapis/google-cloud-cpp) please, read the [official](https://github.com/googleapis/google-cloud-cpp) document.
 
@@ -19,7 +22,7 @@ Alternately you can build the image locally.
 ```bash
 $ git clone https://github.com/dockage/google-cloud-cpp.git
 $ cd google-cloud-cpp
-$ docker build --tag="$USER/google-cloud-cpp" .
+$ docker build --tag="$USER/google-cloud-cpp" -f v1.20/ubuntu/20.04/Dockerfile .
 ```
 
 ## Quick start
@@ -31,6 +34,9 @@ It depends on your building process tools, these flags are required in your C++ 
 * `pkg-config storage_client --cflags`
 * `pkg-config storage_client --libs-only-L`
 * `pkg-config storage_client --libs-only-l`
+* `pkg-config bigtable_client --cflags`
+* `pkg-config bigtable_client --libs-only-L`
+* `pkg-config bigtable_client --libs-only-l`
 
 Command:
 
@@ -52,12 +58,19 @@ target_link_libraries(my_program google_cloud_cpp_common)
 Makefile ([document link](https://github.com/googleapis/google-cloud-cpp-common/blob/master/INSTALL.md#using-google-cloud-cpp-common-in-make-based-projects)):
 
 ```makefile
-GCPP_CXXFLAGS   := $(shell pkg-config google_cloud_cpp_common --cflags)
-GCPP_CXXLDFLAGS := $(shell pkg-config google_cloud_cpp_common --libs-only-L)
-GCPP_LIBS       := $(shell pkg-config google_cloud_cpp_common --libs-only-l)
+GCS_CXXFLAGS   := $(shell pkg-config storage_client --cflags)
+GCS_CXXLDFLAGS := $(shell pkg-config storage_client --libs-only-L)
+GCS_LIBS       := $(shell pkg-config storage_client --libs-only-l)
 
-my_program: my_program.cc
-        $(CXX) $(CXXFLAGS) $(GCPP_CXXFLAGS) $(GCPP_CXXLDFLAGS) -o $@ $^ $(GCPP_LIBS)
+my_storage_program: my_storage_program.cc
+        $(CXX) $(CXXFLAGS) $(GCS_CXXFLAGS) $(GCS_CXXLDFLAGS) -o $@ $^ $(GCS_LIBS)
+
+CBT_CXXFLAGS   := $(shell pkg-config bigtable_client --cflags)
+CBT_CXXLDFLAGS := $(shell pkg-config bigtable_client --libs-only-L)
+CBT_LIBS       := $(shell pkg-config bigtable_client --libs-only-l)
+
+my_bigtable_program: my_bigtable_program.cc
+        $(CXX) $(CXXFLAGS) $(CBT_CXXFLAGS) $(CBT_CXXLDFLAGS) -o $@ $^ $(CBT_LIBS)
 ```
 
 You can also build your project outside, and then put the compiled file inside the container. Then you don't need to install the related tools anymore.
