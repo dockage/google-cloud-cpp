@@ -44,7 +44,6 @@ steps:
         - 'v1.21-ubuntu'
         - 'ubuntu'
         - 'v1.21'
-        - 'latest'
 
   - name: v1.21-ubuntu-18.04
     image: plugins/docker
@@ -58,6 +57,33 @@ steps:
       tags:
         - 'v1.21-ubuntu-18.04'
 
+  - name: v1.22-ubuntu-20.04
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/google-cloud-cpp
+      dockerfile: v1.22/ubuntu/20.04/Dockerfile
+      tags:
+        - 'v1.22-ubuntu-20.04'
+        - 'v1.22-ubuntu'
+        - 'ubuntu'
+        - 'v1.22'
+        - 'latest'
+
+  - name: v1.22-ubuntu-18.04
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/google-cloud-cpp
+      dockerfile: v1.22/ubuntu/18.04/Dockerfile
+      tags:
+        - 'v1.22-ubuntu-18.04'
 ---
 kind: pipeline
 name: notify
