@@ -3,33 +3,6 @@ kind: pipeline
 name: default
 
 steps:
-  - name: v1.20-ubuntu-20.04
-    image: plugins/docker
-    settings:
-      username:
-        from_secret: DOCKER_USERNAME
-      password:
-        from_secret: DOCKER_PASSWORD
-      repo: dockage/google-cloud-cpp
-      dockerfile: v1.20/ubuntu/20.04/Dockerfile
-      tags:
-        - 'v1.20-ubuntu-20.04'
-        - 'v1.20-ubuntu'
-        - 'ubuntu'
-        - 'v1.20'
-
-  - name: v1.20-ubuntu-18.04
-    image: plugins/docker
-    settings:
-      username:
-        from_secret: DOCKER_USERNAME
-      password:
-        from_secret: DOCKER_PASSWORD
-      repo: dockage/google-cloud-cpp
-      dockerfile: v1.20/ubuntu/18.04/Dockerfile
-      tags:
-        - 'v1.20-ubuntu-18.04'
-
   - name: v1.21-ubuntu-20.04
     image: plugins/docker
     settings:
