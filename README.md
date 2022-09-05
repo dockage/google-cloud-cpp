@@ -87,7 +87,7 @@ If the above recommendations do not help then [report your issue](../../issues/n
 
 ## Quick reference
 * Where to get help: [website](https://dockage.dev/), [documentation](https://dockage.dev/docs/)
-* GitHub repo: [dockage/mailcatcher](https://github.com/dockage/mailcatcher)
-* Where to file issues: [GitHub issues](https://github.com/dockage/mailcatcher/issues)
+* GitHub repo: [dockage/google-cloud-cpp](https://github.com/dockage/google-cloud-cpp)
+* Where to file issues: [GitHub issues](https://github.com/dockage/google-cloud-cpp/issues)
 * Maintained by: The Dockage team (info at dockage.dev)
-* License(s) - [license](https://github.com/dockage/mailcatcher/blob/main/LICENSE), check 3rd party documentation for license information
+* License(s) - [license](https://github.com/dockage/google-cloud-cpp/blob/main/LICENSE), check 3rd party documentation for license information
